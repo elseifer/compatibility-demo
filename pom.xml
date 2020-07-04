@@ -36,11 +36,11 @@
 
                 </configuration>
 
-                <!-- test 阶段自动执行 mvn animal-sniffer:check -->
+                <!-- compile 阶段自动执行 mvn animal-sniffer:check -->
                 <executions>
                     <execution>
                         <id>animal-sniffer-check</id>
-                        <phase>test</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
