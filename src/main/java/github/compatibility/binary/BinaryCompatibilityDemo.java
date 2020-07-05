@@ -18,12 +18,18 @@ public class BinaryCompatibilityDemo {
 
         Set<String> strings = concurrentHashMap.keySet();
 
+        System.out.println(strings.size());
+
     }
 
     public void demoOption() {
 
         Optional<String> optional = Optional.empty();
 
+    }
+
+    public static void main(String[] args) {
+        new BinaryCompatibilityDemo().demoKeySetView();
     }
 
     //-source 必须等于或低于 -target 的值必须一致，如 -source 1.8 -target 1.7 会报错 "javacTask: 源发行版 1.8 需要目标发行版 1.8"
