@@ -36,8 +36,6 @@ public class SourceCompatibilityDemo {
         // proxy 类自带一个包含 InvocationHandler 参数的构造器
         Constructor<PulicInteface> constructor = proxyClass.getDeclaredConstructor(InvocationHandler.class);
 
-        constructor.setAccessible(true);
-
         PulicInteface instanceProxy = constructor.newInstance(new InvocationHandler() {
 
             @Override
@@ -65,7 +63,7 @@ public class SourceCompatibilityDemo {
         Constructor constructor = proxyClass.getDeclaredConstructor(InvocationHandler.class);
 
         //JDK 8 需要
-        constructor.setAccessible(true);
+        //constructor.setAccessible(true);
 
         Object instanceProxy = constructor.newInstance(new InvocationHandler() {
 
@@ -74,7 +72,7 @@ public class SourceCompatibilityDemo {
                                  Object[] args) throws Throwable {
 
                 System.out.print("hello, ");
-
+                //JDK 6/8 都需要
                 method.setAccessible(true);
 
                 return method.invoke(defaultInterface, args);
