@@ -14,11 +14,11 @@ public class BinaryCompatibilityDemo {
 
         ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<String, String>();
 
-        long count = concurrentHashMap.mappingCount();
-
         Set<String> strings = concurrentHashMap.keySet();
 
         System.out.println(strings.size());
+
+        long count = concurrentHashMap.mappingCount();
 
     }
 
